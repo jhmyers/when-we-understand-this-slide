@@ -226,6 +226,12 @@ body.dark .act-hero { background: var(--bg); }
   height: 100vh; width: 100%;
   display: grid; place-items: center;
   overflow: hidden;
+  /* Isolate the pinned graph on its own compositing layer. Chrome promotes
+     sticky elements automatically; Safari/Firefox do not, and without this
+     they re-rasterize the SVG every scroll frame — the "flashing nodes". */
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .story-graph { width: 100%; height: 100%; }
 
@@ -246,8 +252,10 @@ body.dark .act-hero { background: var(--bg); }
   pointer-events: auto;
 }
 .step-card > * {
-  background: rgba(14, 18, 24, .82);
-  backdrop-filter: blur(6px);
+  /* Near-opaque panel instead of backdrop-filter: blurring the animating
+     graph behind these cards flickers hard in Firefox/Safari. The solid
+     fill reads almost identically and composites cleanly on scroll. */
+  background: rgba(14, 18, 24, .92);
   padding: 0 22px;
 }
 .step-card .step-kicker { padding-top: 18px; }
@@ -396,10 +404,9 @@ body.dark .act-hero { background: var(--bg); }
 .loop-card {
   position: absolute; left: 18px; bottom: 18px;
   max-width: 460px;
-  background: rgba(13, 17, 23, .93);
+  background: rgba(13, 17, 23, .96);
   border: 1px solid rgba(255, 215, 106, .45);
   padding: 22px 24px;
-  backdrop-filter: blur(4px);
 }
 .loop-card[hidden] { display: none; }
 .loop-close {
