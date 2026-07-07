@@ -250,10 +250,19 @@ export class CoinGraph {
 
     // Node hover + click
     for (const [id, g] of this.nodeEls) {
-      g.addEventListener('mouseenter', () => { if (this.mode === 'normal') this.hoverNode(id); });
-      g.addEventListener('mouseleave', () => { if (this.mode === 'normal') this.clearHover(); });
-      g.addEventListener('focus', () => { if (this.mode === 'normal') this.hoverNode(id); });
-      g.addEventListener('blur', () => { if (this.mode === 'normal') this.clearHover(); });
+      // Hover traces influence in normal mode AND while a node is selected
+      // (panel open) — leaving falls back to the selection's highlight.
+      const enter = () => {
+        if (this.mode === 'normal' || this.mode === 'select') this.hoverNode(id);
+      };
+      const leave = () => {
+        if (this.mode === 'select' && this.selectedId) this.hoverNode(this.selectedId);
+        else if (this.mode === 'normal') this.clearHover();
+      };
+      g.addEventListener('mouseenter', enter);
+      g.addEventListener('mouseleave', leave);
+      g.addEventListener('focus', enter);
+      g.addEventListener('blur', leave);
       const activate = (ev) => {
         ev.stopPropagation();
         if (dragged) return;
@@ -378,6 +387,7 @@ export class CoinGraph {
 
   selectNode(id) {
     this.mode = 'select';
+    this.selectedId = id;
     this.clearHover();
     this.hoverNode(id);
     for (const [nid, g] of this.nodeEls) g.classList.toggle('selected', nid === id);
@@ -450,6 +460,7 @@ export class CoinGraph {
 
   clearAllModes() {
     this.mode = 'normal';
+    this.selectedId = null;
     for (const g of this.nodeEls.values()) g.classList.remove('dim', 'hl', 'loop-node', 'selected');
     for (const { g } of this.edgeEls) { g.classList.remove('dim', 'hl', 'loop-edge'); g.style.removeProperty('--loop-i'); }
   }
