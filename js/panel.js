@@ -2,6 +2,7 @@
 // Explorer UI: node detail panel, category legend/filters, search, loop tours.
 // ============================================================================
 import { categories, catById, nodes, loops } from './data.js';
+import { redlineUrl } from './config.js';
 
 export function initExplorer(graph) {
   const panel = document.getElementById('detailPanel');
@@ -34,6 +35,9 @@ export function initExplorer(graph) {
       : '';
     pl.querySelectorAll('[data-loop]').forEach((b) =>
       b.addEventListener('click', () => startLoop(b.dataset.loop)));
+
+    const edit = document.getElementById('panelEdit');
+    edit.href = redlineUrl(n);
 
     panel.hidden = false;
   }

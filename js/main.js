@@ -6,6 +6,7 @@ import { categories } from './data.js';
 import { CoinGraph } from './graph.js';
 import { initStory } from './story.js';
 import { initExplorer } from './panel.js';
+import { redlineUrl, REPO_URL } from './config.js';
 
 // Per-category color custom properties, generated from the single source
 // of truth in data.js.
@@ -48,3 +49,7 @@ const explorer = new CoinGraph(document.getElementById('exploreGraph'), {
 });
 explorer.revealAll();
 explorerApi = initExplorer(explorer);
+
+// Act 4 — redline calls to action
+document.getElementById('redlineBtn').href = redlineUrl(null);
+document.getElementById('ghIssueBtn').href = `${REPO_URL}/issues/new`;
