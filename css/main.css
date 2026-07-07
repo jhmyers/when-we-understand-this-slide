@@ -340,6 +340,26 @@ body.dark .act-hero { background: var(--bg); }
 .explore-graph { width: 100%; height: 100%; touch-action: none; cursor: grab; }
 .explore-graph:active { cursor: grabbing; }
 
+/* fullscreen map toggle */
+.btn-fullscreen {
+  position: absolute; top: 10px; right: 10px; z-index: 5;
+  background: rgba(13, 17, 23, .85);
+  border: 1px solid var(--night-line);
+  color: var(--night-muted);
+  font-size: .66rem; letter-spacing: .14em;
+  padding: .6em .9em; cursor: pointer;
+}
+.btn-fullscreen:hover { color: var(--gold); border-color: var(--gold); }
+
+.explore-main.map-fs {
+  position: fixed; inset: 0; z-index: 300;
+  background: var(--night-bg);
+  padding: 10px; gap: 10px; margin: 0;
+}
+.map-fs .graph-wrap { height: auto; min-height: 0; flex: 1; }
+.map-fs .detail-panel { max-height: none; }
+body.no-scroll { overflow: hidden; }
+
 /* detail panel */
 .detail-panel {
   width: 370px; flex: none;
@@ -644,9 +664,49 @@ body.dark .act-hero { background: var(--bg); }
   .explore-main { flex-direction: column; }
   .detail-panel { width: 100%; max-height: 50vh; }
   .step-card { margin: 0 auto; max-width: 92vw; }
-  .slide-legend-box { position: static; width: 100%; margin-bottom: 10px; }
+
+  /* The slide homage: the graph IS the hook — it must come first. Reorder
+     so the mess is visible immediately, then a compact two-column key. */
+  .slide-chrome { display: flex; flex-direction: column; padding: 18px 14px 10px; }
+  /* Demote the legend to fine print: the slide is the exhibit, the key is a
+     footnote. Tiny, muted, unboxed — it should not compete for attention. */
+  .slide-legend-box {
+    position: static; width: 100%; order: 1; margin-top: 10px; padding: 5px 8px;
+    border-width: 1px; border-color: #ccc7b4;
+  }
+  .slide-footer { order: 2; }
+  .slide-legend { display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 8px; }
+  .slide-legend li {
+    font-size: .48rem; font-weight: normal; color: #6b6553;
+    gap: 4px; padding: .5px 0; line-height: 1.2;
+  }
+  .sl-swatch { width: 7px; height: 7px; opacity: .8; }
+  .slide-delay-key {
+    font-size: .5rem; font-weight: normal; color: #6b6553;
+    padding-bottom: 3px; margin-bottom: 3px;
+  }
+  .slide-delay-key svg { width: 32px; height: 12px; opacity: .7; }
+
   .loop-card { left: 10px; right: 10px; bottom: 10px; max-width: none; }
   .legend-coin { display: none; }
+  /* 16px floor stops iOS Safari from auto-zooming the page on focus */
+  #searchInput { font-size: 16px; }
+
+  /* In fullscreen on mobile, the detail panel overlays the map as a
+     bottom sheet rather than shoving it off-screen. */
+  .explore-main.map-fs { padding: 8px; }
+  .map-fs .detail-panel {
+    position: absolute; left: 8px; right: 8px; bottom: 8px;
+    width: auto; max-height: 52vh; z-index: 6;
+    box-shadow: 0 -18px 40px rgba(0, 0, 0, .55);
+  }
+}
+
+/* On touch devices, let a vertical swipe over the map scroll the page —
+   otherwise the near-full-height graph traps the user mid-page. Horizontal
+   drag still pans; pinch still zooms; fullscreen restores full capture. */
+@media (pointer: coarse) {
+  .explore-main:not(.map-fs) .explore-graph { touch-action: pan-y; }
 }
 
 /* ── reduced motion ───────────────────────────────────────────────────── */

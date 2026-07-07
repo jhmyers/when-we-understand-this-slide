@@ -40,6 +40,10 @@ export function initExplorer(graph) {
     edit.href = redlineUrl(n);
 
     panel.hidden = false;
+    // On mobile (outside fullscreen) the panel lives below the graph —
+    // bring it into view so a node tap visibly does something.
+    if (!fullscreen && window.matchMedia('(max-width: 980px)').matches)
+      panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
 
   function fillFlow(listId, arr) {
@@ -159,6 +163,20 @@ export function initExplorer(graph) {
     }
   });
 
+  // ── Fullscreen map ──────────────────────────────────────────────────────
+  const fsBtn = document.getElementById('fsBtn');
+  const exploreMain = document.querySelector('.explore-main');
+  let fullscreen = false;
+  function setFullscreen(on) {
+    fullscreen = on;
+    exploreMain.classList.toggle('map-fs', on);
+    document.body.classList.toggle('no-scroll', on);
+    fsBtn.textContent = on ? '✕ EXIT FULL SCREEN' : '⛶ FULL SCREEN';
+    fsBtn.setAttribute('aria-pressed', String(on));
+    if (!on) document.getElementById('explore').scrollIntoView({ block: 'nearest' });
+  }
+  fsBtn.addEventListener('click', () => setFullscreen(!fullscreen));
+
   // ── Reset + keyboard ────────────────────────────────────────────────────
   document.getElementById('resetView').addEventListener('click', () => {
     exitLoop(false);
@@ -174,6 +192,7 @@ export function initExplorer(graph) {
     if (ev.key === 'Escape') {
       if (!loopCard.hidden) exitLoop();
       else if (!panel.hidden) closePanel();
+      else if (fullscreen) setFullscreen(false);
     }
   });
 
