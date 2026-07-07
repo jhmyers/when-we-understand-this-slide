@@ -12,8 +12,17 @@ export const FORM_URL = '';
 // Leave empty to skip node-name pre-filling.
 export const FORM_NODE_ENTRY = '';
 
+// Google Form share link for the "Follow the Draft" signup (email + how
+// involved). Leave empty to fall back to GitHub watch.
+export const NOTIFY_URL = '';
+
 // The nerd path — pre-filled GitHub issue on the public repo.
 export const REPO_URL = 'https://github.com/jhmyers/when-we-understand-this-slide';
+
+/** URL for the "notify me" ask. */
+export function notifyUrl() {
+  return NOTIFY_URL || `${REPO_URL}/subscription`;
+}
 
 /** Build the redline URL for a given node (or null for a general redline). */
 export function redlineUrl(node) {

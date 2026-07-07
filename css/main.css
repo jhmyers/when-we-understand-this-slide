@@ -480,8 +480,13 @@ body.dark .act-hero { background: var(--bg); }
   padding: 2.2em 1em;
 }
 
-.redline-cta {
+.cta-grid {
   margin-top: 10vh;
+  display: grid;
+  gap: 18px;
+}
+.cta-follow { border-color: rgba(255, 215, 106, .45); }
+.redline-cta {
   border: 1px solid var(--night-line);
   background: var(--night-bg-2);
   padding: clamp(28px, 4vw, 48px);
