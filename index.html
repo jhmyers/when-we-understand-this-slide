@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>When We Understand This Slide — AI / Higher-Ed Dynamics</title>
+<meta name="description" content="The infamous 2009 Afghanistan COIN spaghetti diagram, rebuilt as an interactive causal map of AI in higher education and distributed IT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- ═══════════════════ ACT 0 — KABUL, 2009 ═══════════════════ -->
+<header class="act act-hero" id="hero">
+  <div class="hero-inner">
+    <p class="stamp stamp-red">WORKING DRAFT — V3</p>
+    <p class="hero-kicker mono">KABUL, AFGHANISTAN · SUMMER 2009</p>
+    <h1 class="hero-title">“When we understand<br>that slide, we’ll have<br>won the war.”</h1>
+    <p class="hero-attr mono">— GEN. STANLEY McCHRYSTAL, COMMANDER, US &amp; NATO FORCES,<br>ON BEING SHOWN THE SLIDE BELOW</p>
+    <div class="scroll-cue mono" aria-hidden="true">SCROLL ▾</div>
+  </div>
+</header>
+
+<section class="act act-slide" id="slide-act">
+  <div class="narrow">
+    <p class="lede">In the summer of 2009, in a briefing room in Kabul, the commander of American
+    and NATO forces in Afghanistan was shown a single PowerPoint slide. It had been built by
+    PA&nbsp;Consulting with military planners — a <em>system dynamics</em> model: every major force
+    in the war, and every causal arrow between them. Popular support. Insurgent recruiting.
+    Government capacity. The narcotics economy. Coalition priorities. All of it, on one page.</p>
+    <p>The room erupted in laughter. A year later the <em>New York Times</em> put the slide on its
+    front page as a symbol of everything wrong with the war effort — and with PowerPoint, and
+    possibly with civilization. It has been an icon of institutional chaos ever since.</p>
+  </div>
+
+  <figure class="slide-frame" id="slideFrame">
+    <div class="slide-chrome">
+      <div class="slide-title">Afghanistan Stability / COIN Dynamics</div>
+      <div class="slide-legend-box">
+        <div class="slide-delay-key"><svg viewBox="0 0 60 22" width="52" height="20" aria-hidden="true"><path d="M4 16 Q 30 2 56 12" fill="none" stroke="#333" stroke-width="1.4"/><line x1="26" y1="2" x2="20" y2="16" stroke="#333" stroke-width="1.4"/><line x1="33" y1="3" x2="27" y2="17" stroke="#333" stroke-width="1.4"/><path d="M56 12 l-7 -3 l2 6 z" fill="#333"/></svg> = Significant Delay</div>
+        <ul class="slide-legend" id="slideLegend"></ul>
+      </div>
+      <svg id="miniGraph" class="mini-graph" aria-label="A dense causal-loop diagram in the style of the 2009 Afghanistan COIN slide"></svg>
+      <div class="slide-footer">
+        <span>© A university near you, 2026</span>
+        <span>Page 22</span>
+        <span class="slide-draft">WORKING DRAFT — V3</span>
+      </div>
+    </div>
+    <figcaption class="mono slide-caption">Fig. 1 — The slide. Look at it the way the room in Kabul did: all at once. Do not try to read it yet.</figcaption>
+  </figure>
+</section>
+
+<!-- ═══════════════════ ACT 1 — THE TURN ═══════════════════ -->
+<section class="act act-turn" id="turn">
+  <div class="narrow">
+    <p>Here is what the laughter missed, and what the people who built the slide kept trying to
+    explain: <strong>the diagram was accurate.</strong> It had been developed over an hour-long
+    working session, subsystem by subsystem, with people who understood the ground truth. Every
+    arrow earned its place. The slide didn’t fail to describe the war. It succeeded — and the
+    description was unbearable.</p>
+    <p class="turn-beat">The problem was never the slide.<br>The problem was that the slide was true.</p>
+  </div>
+
+  <div class="turn-point" id="turnPoint" aria-hidden="true"></div>
+
+  <div class="narrow dark-copy">
+    <p class="turn-reveal">Now scroll back up for a moment — or don’t, we’ll wait — and
+    <strong>read the labels</strong> on Figure&nbsp;1.</p>
+    <p>“Shadow AI.” “Tool Vetting Throughput.” “Faculty Workload.” “Vendor Gold Rush.”</p>
+    <p><strong>That was never the Afghanistan slide.</strong> It is a working model of AI on a
+    university campus, drawn with the original’s own grammar: the same eight kinds of actors, the
+    same causal arrows, the same “significant delay” hash marks. We just changed the nouns —
+    and almost nothing else needed changing.</p>
+    <p>If you work in higher education IT, you already knew this diagram before you saw it. You
+    live on it. You are a node on it — possibly several.</p>
+    <p class="turn-invite">What follows is the hour-long build the original deserved:
+    the system, one subsystem at a time.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ ACT 2 — THE BUILD ═══════════════════ -->
+<section class="act act-build" id="build">
+  <div class="build-stage" id="buildStage">
+    <svg id="storyGraph" class="story-graph" aria-hidden="true"></svg>
+  </div>
+  <div class="build-steps" id="buildSteps"><!-- step cards injected by story.js --></div>
+</section>
+
+<!-- ═══════════════════ ACT 3 — THE EXPLORER ═══════════════════ -->
+<section class="act act-explore" id="explore">
+  <div class="explore-head narrow-wide">
+    <p class="stamp">THE FULL MAP · INTERACTIVE</p>
+    <h2>Explore the system</h2>
+    <p class="explore-sub">Every node is clickable and carries its counterpart from the 2009 original.
+    Hover to trace influence. Drag to pan, scroll to zoom. Or take a guided tour of the feedback
+    loops that actually run this place.</p>
+  </div>
+
+  <div class="explore-shell">
+    <div class="explore-toolbar">
+      <input type="search" id="searchInput" class="mono" placeholder="Search nodes… (e.g. ‘shadow’, ‘policy’, ‘vetting’)" aria-label="Search nodes">
+      <span class="search-count mono" id="searchCount" aria-live="polite"></span>
+      <button class="btn-reset mono" id="resetView">RESET VIEW</button>
+    </div>
+
+    <div class="explore-main">
+      <div class="graph-wrap" id="graphWrap">
+        <svg id="exploreGraph" class="explore-graph"></svg>
+        <div class="loop-card" id="loopCard" hidden>
+          <button class="loop-close mono" id="loopClose" aria-label="Exit loop tour">✕ EXIT TOUR</button>
+          <p class="loop-kind mono" id="loopKind"></p>
+          <h3 id="loopTitle"></h3>
+          <p id="loopStory"></p>
+        </div>
+      </div>
+
+      <aside class="detail-panel" id="detailPanel" aria-live="polite" hidden>
+        <button class="panel-close mono" id="panelClose" aria-label="Close detail panel">✕</button>
+        <p class="panel-cat mono" id="panelCat"></p>
+        <h3 id="panelTitle"></h3>
+        <p class="panel-coin mono" id="panelCoin"></p>
+        <p class="panel-desc" id="panelDesc"></p>
+        <div class="panel-flows">
+          <div><h4 class="mono">INFLUENCED BY</h4><ul id="panelIn"></ul></div>
+          <div><h4 class="mono">INFLUENCES</h4><ul id="panelOut"></ul></div>
+        </div>
+        <div class="panel-loops" id="panelLoops"></div>
+      </aside>
+    </div>
+
+    <div class="explore-legend" id="exploreLegend" role="toolbar" aria-label="Filter by category"></div>
+
+    <div class="loop-tours">
+      <p class="mono loops-label">GUIDED TOURS — THE LOOPS THAT RUN THE PLACE:</p>
+      <div class="loop-buttons" id="loopButtons"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ACT 4 — THE PATH FORWARD ═══════════════════ -->
+<section class="act act-forward" id="forward">
+  <div class="narrow">
+    <p class="stamp stamp-red">PHASE TWO — IN DEVELOPMENT</p>
+    <h2>When we understand this slide…</h2>
+    <p>McChrystal’s line was a joke, but it was also a hypothesis: that understanding the system is
+    the precondition for changing it. The joke aged badly in Afghanistan because understanding never
+    arrived. It doesn’t have to go that way here.</p>
+    <p>Look back at the map. Almost every loop on it is a <em>reinforcing</em> loop running against
+    the institution — the Shadow Spiral, the Policy Lag, the Talent Drain, the Vendor Squeeze. But
+    there is one loop drawn in the institution’s favor: <button class="inline-loop-link" data-loop="trust-flywheel">the Trust Flywheel</button>.
+    Visible wins → trust → disclosure → visibility → better tools → more wins. Every serious path
+    forward is a strategy for starting that wheel and starving the others.</p>
+    <p>That’s Phase Two: not another diagram of the problem, but an honest sequence of moves —
+    what to build, what to stop blocking, what to fund, what to say out loud. It is being drafted
+    now, with people who live on this map.</p>
+    <p class="forward-tease mono">THIS SPACE INTENTIONALLY LEFT UNFINISHED.</p>
+  </div>
+
+  <footer class="colophon narrow">
+    <h4 class="mono">SOURCES &amp; NOTES</h4>
+    <ul class="mono">
+      <li>The original: PA Consulting Group, “Afghanistan Stability / COIN Dynamics,” 2009 — a system-dynamics causal-loop model built with US military planners; publicized by the New York Times, April 2010.</li>
+      <li>~56% of higher-education employees report using AI tools their institution does not provide (sector surveys, 2025).</li>
+      <li>39% of institutions report an AI acceptable-use policy — up from 23% in 2024 (EDUCAUSE AI Landscape Study, 2025).</li>
+      <li>EDUCAUSE research repeatedly finds more AI tools in campus use than central IT is aware of.</li>
+      <li>This site is an analogy, not an equivalence. Nothing on a university campus is a war, and the people on this map — all of them, including the “insurgents” — are colleagues acting rationally inside a system that makes the shadow path the path of least resistance. That is the point.</li>
+    </ul>
+    <p class="mono colophon-sig">A WORKING DRAFT, LIKE EVERYTHING ELSE ON THIS PAGE · V1 · 2026</p>
+  </footer>
+</section>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
