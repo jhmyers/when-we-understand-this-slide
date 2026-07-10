@@ -1,5 +1,7 @@
 # When We Understand This Slide
 
+**Live site: <https://jhmyers.github.io/when-we-understand-this-slide/>**
+
 The infamous 2009 PA Consulting **"Afghanistan Stability / COIN Dynamics"**
 spaghetti diagram, rebuilt as an interactive causal map of **AI in higher
 education and distributed IT** — a scroll-driven story site that constructs
