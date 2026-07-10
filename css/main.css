@@ -570,6 +570,7 @@ body.no-scroll { overflow: hidden; }
   color: var(--night-muted);
 }
 .colophon h4 { font-size: .7rem; letter-spacing: .3em; margin-bottom: 1.2em; }
+.colophon h4:not(:first-of-type) { margin-top: 3.5em; }
 .colophon ul { list-style: none; }
 .colophon li {
   font-size: .74rem; line-height: 1.8;
@@ -577,6 +578,32 @@ body.no-scroll { overflow: hidden; }
   margin-bottom: .7em;
 }
 .colophon li::before { content: '— '; }
+.colophon a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+}
+.colophon a:hover { color: var(--gold); }
+.colophon .how-made {
+  font-size: .78rem; line-height: 1.8;
+  max-width: 62ch; margin-bottom: 1.4em;
+}
+.prompt-exhibit { margin-bottom: 2.5em; }
+.prompt-exhibit summary {
+  cursor: pointer;
+  font-size: .7rem; letter-spacing: .25em;
+  list-style: none;
+}
+.prompt-exhibit summary::-webkit-details-marker { display: none; }
+.prompt-exhibit summary:hover { color: var(--gold); }
+.prompt-exhibit .prompt-text {
+  margin-top: 1.2em; padding: 1.4em 1.6em;
+  border-left: 2px solid var(--night-line);
+  font-size: .72rem; line-height: 1.9;
+  white-space: pre-line;
+  max-width: 68ch;
+}
 .colophon-sig { margin-top: 3em; font-size: .68rem; letter-spacing: .22em; text-align: center; }
 
 /* ════════════════════════════════════════════════════════════════════════

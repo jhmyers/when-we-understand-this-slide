@@ -5,16 +5,16 @@
 // Google Form share link for "Redline the Map" (e.g. 'https://forms.gle/XXXX'
 // or the full docs.google.com/forms/d/e/.../viewform URL).
 // Leave empty to fall back to GitHub issues everywhere.
-export const FORM_URL = '';
+export const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfOybs33OG9eHM8bSLjvrsoBd3_mVWVs27Vu0be1-9NQT64RQ/viewform';
 
 // The entry ID for the "Which part of the map?" short-answer question,
 // taken from a pre-filled link (looks like 'entry.123456789').
 // Leave empty to skip node-name pre-filling.
-export const FORM_NODE_ENTRY = '';
+export const FORM_NODE_ENTRY = 'entry.692725884';
 
 // Google Form share link for the "Follow the Draft" signup (email + how
 // involved). Leave empty to fall back to GitHub watch.
-export const NOTIFY_URL = '';
+export const NOTIFY_URL = 'https://forms.gle/3bCtfcpXiJd2ahSV6';
 
 // The nerd path — pre-filled GitHub issue on the public repo.
 export const REPO_URL = 'https://github.com/jhmyers/when-we-understand-this-slide';

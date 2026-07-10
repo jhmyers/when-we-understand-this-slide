@@ -685,7 +685,7 @@ export const steps = [
     id: 'economy', cats: ['aca'],
     kicker: 'IN THE ORIGINAL: INFRASTRUCTURE, ECONOMY & SERVICES',
     title: 'What the struggle is actually over',
-    body: 'In the original, this was roads, crops, and services — the real economy that determined whether the population could live a legitimate life. Ours is teaching, research, and student services: the actual work of the university. Note the node the original called "legit vs. illicit relative economic opportunity." Ours is "sanctioned vs. shadow relative convenience." People take the path that pays.',
+    body: 'In the original, this was roads, crops, and services — the real economy that determined whether the population could live a legitimate life. Ours is teaching, research, and student services: the actual work of the university. Note the node the original called "legit vs. illicit relative economic opportunity." Ours is "sanctioned vs. shadow relative convenience." People take the path that works.',
   },
   {
     id: 'security', cats: ['cit'],

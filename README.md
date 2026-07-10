@@ -6,7 +6,7 @@ education and distributed IT** — a scroll-driven story site that constructs
 the system one subsystem at a time, then hands you the full explorable mess.
 
 - **107 nodes**, each mapped to its counterpart on the 2009 original
-- **235 causal edges**, with the original's "significant delay" (‖) marks
+- **233 causal edges**, with the original's "significant delay" (‖) marks
 - **5 guided feedback-loop tours** (the Shadow Spiral, the Policy Lag Loop,
   the Talent Drain, the Vendor Squeeze, and the one hopeful loop — the Trust
   Flywheel)
